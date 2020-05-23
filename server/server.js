@@ -5,6 +5,7 @@ const app = express()
 const PORT = 8080
 const config = require('./config.json')
 const session = require('express-session')
+const passport = require('passport');
 
 // MIDDLEWARE
 app.use(morgan('dev'))
@@ -30,6 +31,12 @@ app.use( (req, res, next) => {
   console.log('req.session', req.session);
   return next();
 });
+
+// Passport auth
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 
 // routing
 app.get('/plus', (req, res, next)=> {
