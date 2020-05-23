@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-node-oauth"
+    }
+  },
+  "defaultProject": "angular-node-oauth",
+  "cli": {
+    "analytics": "29dab714-bfc4-4e89-9ec7-9404451fe3ac"
+  }
 }
