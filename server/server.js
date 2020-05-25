@@ -5,7 +5,8 @@ const app = express()
 const PORT = 8080
 const config = require('./config.json')
 const session = require('express-session')
-const passport = require('passport');
+const passport = require('./passport');
+const google = require('./routes/google')
 
 // MIDDLEWARE
 app.use(morgan('dev'))
@@ -37,13 +38,15 @@ app.use( (req, res, next) => {
 app.use(passport.initialize());
 app.use(passport.session());
 
-
 // routing
+app.use('/auth/google', google);
+
 app.get('/plus', (req, res, next)=> {
 	console.log('server get: ');
 	console.log(req.body)
-	res.end()
-})
+	res.end();
+});
+
 
 // Starting Server 
 app.listen(PORT, () => {
