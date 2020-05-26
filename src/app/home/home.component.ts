@@ -21,8 +21,8 @@ export class HomeComponent implements OnInit {
 
     console.log('url parsed: ')
     console.log(query);
-    if (query.token) {
-      window.localStorage.setItem("jwt", query.token);
+    if (query['/?token']) {
+      window.localStorage.setItem("jwt", query['/?token']);
     }
   }
 

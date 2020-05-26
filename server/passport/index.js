@@ -2,16 +2,8 @@ const passport = require("passport");
 // import passport from "passport";
 const googleOauth = require("passport-google-oauth");
 const GoogleStrategy = googleOauth.OAuth2Strategy;
-const fs = require('fs');
-const path = require('path')
-
-// Google API clientID, clientSecret, etc. set up at https://console.developers.google.com/
-
-const keyPath = path.join(__dirname, '../config.json');
-let googleConfig = {redirect_uris: ['']};
-if (fs.existsSync(keyPath)) {
-  googleConfig = require(keyPath).google;
-}
+const config = require('../config');
+const googleConfig = config.google;
 
 passport.serializeUser(function(user, done) {
   done(null, user);

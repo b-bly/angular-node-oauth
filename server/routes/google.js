@@ -10,7 +10,7 @@ router.get(
 
 router.get(
   "/callback",
-  passport.authenticate("google", { failureRedirect: "/api/auth/google", session: false }),
+  passport.authenticate("google", { failureRedirect: "/api/auth/google", session: true }),
   function(req, res) {
 
       console.log(req.user);

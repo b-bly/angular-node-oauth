@@ -10,16 +10,18 @@ export class PlusService {
 
   async getPlusInfo<T>() {
     try {
-      let params: any = {};
       const jwt = window.localStorage.getItem("jwt");
+      const httpOptions = {
+        headers: new HttpHeaders({
+          'Content-Type':  'application/json',
+          'Authorization': 'Bearer ' + jwt
+        })
+      };
       if (jwt) {
-        params = {
-          headers: new HttpHeaders()
-        };
-        params.headers.append('Content-Type', 'application/json; charset=utf-8');
-        params.headers.append(`Authorization`, `Bearer ${jwt}`);
+
+        httpOptions.headers.append(`Authorization`, `Bearer ${jwt}`);
       }
-      const res = <Promise<T>>this.http.get('/plus', {params}).toPromise();
+      const res = <Promise<T>>this.http.get('/plus').toPromise();
       return res;
 
       
