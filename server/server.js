@@ -7,6 +7,7 @@ const config = require('./config')
 const session = require('express-session')
 const passport = require('./passport');
 const google = require('./routes/google')
+const user = require('./routes/user');
 
 // MIDDLEWARE
 app.use(morgan('dev'))
@@ -40,6 +41,7 @@ app.use(passport.session());
 
 // routing
 app.use('/auth/google', google);
+app.use('/user', user);
 
 app.get('/plus', (req, res, next)=> {
 	res.end();

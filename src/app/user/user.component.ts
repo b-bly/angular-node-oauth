@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { PlusService } from '../plus.service';
+import { AuthService } from '../auth.service';
+import * as types from '../types';
+
 
 @Component({
   selector: 'app-user',
@@ -7,10 +10,10 @@ import { PlusService } from '../plus.service';
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
+  @Input() user: types.User;
 
-  constructor(private plusService: PlusService) { }
+  constructor() { }
 
-  async ngOnInit() {
-    await this.plusService.getPlusInfo();
-  }
+  ngOnInit() {}
+
 }
