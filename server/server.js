@@ -40,10 +40,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // routing
-app.use('/auth/google', google);
-app.use('/user', user);
+app.use('/api/auth/google', google);
+app.use('/api/user', user);
 
-app.get('/plus', (req, res, next)=> {
+app.get('/api/plus', (req, res, next)=> {
+	console.log(req.headers)
 	res.end();
 });
 

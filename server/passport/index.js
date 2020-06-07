@@ -1,5 +1,4 @@
 const passport = require("passport");
-// import passport from "passport";
 const googleOauth = require("passport-google-oauth");
 const GoogleStrategy = googleOauth.OAuth2Strategy;
 const config = require('../config');

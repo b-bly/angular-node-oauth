@@ -9,6 +9,20 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   getUser<T>() {
-    return <Promise<T>>this.http.get('/user').toPromise();
+    return <Promise<T>>this.http.get('/api/user').toPromise();
+  }
+
+  async getPlusInfo<T>() {
+    try {
+      return <Promise<T>>this.http.get('/api/plus').toPromise();
+    } catch (e) {
+      if (e.status == 401) {
+        return {
+          status: 401
+        }
+      } else {
+        throw e;
+      }
+    }
   }
 }

@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import {HttpClientModule} from '@angular/common/http';
 import { UserComponent } from './user/user.component'
-import { PlusService } from './plus.service';
 import { LoginComponent } from './login/login.component';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import { LoginComponent } from './login/login.component';
     HttpClientModule
   ],
   providers: [
-    PlusService
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --proxy-config proxy.conf.json --watch --open",
+    "start": "ng serve --watch --open",
     "server": "cd server && npm start",
     "build": "ng build",
     "test": "ng test",
@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "~9.1.4",
     "@angular/router": "~9.1.4",
     "query-string": "^6.12.1",
+    "roboto-fontface": "^0.10.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

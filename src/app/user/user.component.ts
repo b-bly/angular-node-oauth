@@ -1,6 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { PlusService } from '../plus.service';
-import { AuthService } from '../auth.service';
 import * as types from '../types';
 
 
